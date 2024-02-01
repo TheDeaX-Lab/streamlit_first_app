@@ -1,3 +1,5 @@
 pandas
 graphviz
 streamlit
+sympy
+numpy
