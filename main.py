@@ -127,7 +127,7 @@ if enable_calculate:
             )
             for row in ns
             if sum(map(abs, row)) != 0
-        ] + [sympy.Eq(sympy.Add(*Ps.values()), 1)], Ps)
+        ] + [sympy.Eq(sympy.Add(*Ps.values()), 1)], [*Ps.values()])
         if len(result_values) > 0:
             for k in range(len(ns)):
                 if Ps[pjcols[k]] in result_values:
@@ -136,7 +136,7 @@ if enable_calculate:
                     st.latex(pjcols[k] + " = ХЗ")
             
             def tauj(j):
-                return (q / (1 - valss[j][j])) if valss[j][j] != 1 else float("inf")
+                return (q / (1 - valss[j][j])) if valss[j][j] != 1 else sympy.oo
 
             def taurj(j):
                 return tauj(j)* (
