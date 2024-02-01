@@ -73,7 +73,7 @@ if enable_calculate:
         steps = [rw]
         
         for step in range(nsteps):
-            steps.append(valss @ steps[-1])
+            steps.append(steps[-1] @ valss)
         Pdf = pd.DataFrame(steps, columns=cols, dtype="float64")
         Pdf.index = [f"k={i}" for i in range(len(steps))]
         Pdf.columns.name = "Вероятность Pi(k)"
