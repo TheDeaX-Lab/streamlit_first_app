@@ -45,7 +45,7 @@ if enable_calculate:
         st.title("Проделанные вычисления")
         st.header("Граф состояний")
         vals = df.values
-        graph = graphviz.Graph()
+        graph = graphviz.Digraph()
         for i in range(n):
             for j in range(n):
                 val = vals[i][j]
