@@ -94,7 +94,7 @@ if enable_calculate:
         
         st.header("Попытка автоматического решения СЛАУ (Может не сработать)")
         
-        ns = valss.copy()
+        ns = valss.copy().T
         for i in range(len(ns)):
             ns[i][i] -= 1
         for i in range(len(ns)):
