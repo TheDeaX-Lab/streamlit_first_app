@@ -139,11 +139,11 @@ if enable_calculate:
                 return (q / (1 - valss[j][j])) if valss[j][j] != 1 else sympy.oo
 
             def taurj(j):
-                return tauj(j)* (
+                return ((tauj(j)* (
                     (2 - valss[j][j] - result_values[Ps[pjcols[j]]])
                     /
                     result_values[Ps[pjcols[j]]]
-                ) if Ps[pjcols[k]] in result_values else "ХЗ"
+                )) if result_values[Ps[pjcols[j]]] else sympy.oo) if Ps[pjcols[k]] in result_values else "ХЗ"
 
             def tj(j):
                 return (tauj(j) + taurj(j)) if Ps[pjcols[k]] in result_values else "ХЗ"
